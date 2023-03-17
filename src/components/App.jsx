@@ -5,7 +5,7 @@ import Info from "./Info";
 export default function App() {
   return (
     <div>
-      <h1>Hello World</h1>
+      <Time />
     </div>
   );
 }
