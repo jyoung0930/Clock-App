@@ -18,19 +18,27 @@
   background-image: url("./assets/desktop/bg-image-nighttime.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  width: 1440px;
-  height: 800px;
+  background-position: center;
+  max-width: 90rem;
+  height: 100vh;
   border: 0.2rem solid red;
-  padding: 2em 6em;
+}
+
+.time_padding {
+  padding: 2em 3em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
 }
 
 .quote {
-  max-width: 573px;
+  max-width: 35.8125rem;
 }
 
 .quote_heading {
   font-weight: 400;
-  font-size: 1rem;
+  font-size: clamp(1vw, 1rem, 5vw);
   line-height: 1.7rem;
 }
 
@@ -44,13 +52,14 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+  flex-wrap: wrap;
 }
 
 .time_greeting {
   display: flex;
   align-items: baseline;
   letter-spacing: 0.25rem;
-  font-size: 1.2rem;
+  font-size: clamp(1vw, 1.2rem, 2vw);
 }
 
 .time_greeting img {
@@ -58,12 +67,12 @@
 }
 
 .time {
-  font-size: 12.5rem;
+  font-size: clamp(5vw, 12.5rem, 15vw);
   font-weight: 700;
 }
 
 .country {
-  font-size: 1.75rem;
+  font-size: clamp(2vw, 1.2rem, 10vw);
   letter-spacing: 0.175em;
   font-weight: 700;
 }
@@ -87,8 +96,8 @@
   align-items: center;
   background-color: #303030;
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  width: 2.5rem;
+  height: 2.5rem;
 }
 
 .button p {
@@ -96,3 +105,9 @@
   letter-spacing: 0.175em;
   font-weight: 700;
 }
+
+/* .info-box {
+  height: 50vh;
+  width: 100%;
+  background-color: blue;
+} */
