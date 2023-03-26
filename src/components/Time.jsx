@@ -2,13 +2,21 @@ import moonIcon from "../assets/desktop/icon-moon.svg";
 import sunIcon from "../assets/desktop/icon-sun.svg";
 import downArrow from "../assets/desktop/icon-arrow-down.svg";
 import upArrow from "../assets/desktop/icon-arrow-up.svg";
+import refreshIcon from "../assets/desktop/icon-refresh.svg";
 
-export default function Time({ quoteData }) {
+export default function Time({ quoteData, newQuote, time }) {
   return (
     <main className="time_section">
       <div className="time_padding">
         <section className="quote">
-          <p className="quote_heading">"{quoteData.content}"</p>
+          <p className="quote_heading">
+            "{quoteData.content}"
+            <img
+              onClick={() => newQuote((prev) => !prev)}
+              src={refreshIcon}
+              alt="icon"
+            />
+          </p>
           <p className="quote_author">{quoteData.author}</p>
         </section>
         <section className="time_button_section">
@@ -17,7 +25,7 @@ export default function Time({ quoteData }) {
               <img src={moonIcon} alt="weather icon" /> GOOD EVENING, IT'S
               CURRENTLY
             </p>
-            <p className="time">23:14</p>
+            <p className="time">{time}</p>
             <p className="country">IN LONDON, UK</p>
           </div>
 

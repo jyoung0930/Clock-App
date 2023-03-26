@@ -42,6 +42,11 @@
   line-height: 1.7rem;
 }
 
+.quote_heading img {
+  margin-left: 0.5rem;
+  cursor: pointer;
+}
+
 .quote_author {
   font-weight: 700;
   margin-top: 1em;
