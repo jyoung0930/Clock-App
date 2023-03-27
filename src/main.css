@@ -111,8 +111,29 @@
   font-weight: 700;
 }
 
-/* .info-box {
+/* Info Section */
+
+.info {
   height: 50vh;
   width: 100%;
-  background-color: blue;
-} */
+  padding: 3rem;
+  display: grid;
+  background-color: gray;
+
+  grid-template-areas:
+    "cz dow"
+    "doy wn";
+}
+
+.cz {
+  grid-area: cz;
+}
+.doy {
+  grid-area: doy;
+}
+.dow {
+  grid-area: dow;
+}
+.wn {
+  grid-area: wn;
+}

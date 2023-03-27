@@ -3,6 +3,7 @@ import sunIcon from "../assets/desktop/icon-sun.svg";
 import downArrow from "../assets/desktop/icon-arrow-down.svg";
 import upArrow from "../assets/desktop/icon-arrow-up.svg";
 import refreshIcon from "../assets/desktop/icon-refresh.svg";
+import Info from "./Info";
 
 export default function Time({ quoteData, newQuote, time }) {
   return (
@@ -38,7 +39,7 @@ export default function Time({ quoteData, newQuote, time }) {
         </section>
       </div>
       {/* conditionally render info box */}
-      {/* <div className="info-box"></div> */}
+      <Info />
     </main>
   );
 }

@@ -42,7 +42,6 @@ export default function App() {
           day_of_week: data.day_of_week,
           day_of_year: data.day_of_year,
           timeZone: data.timezone,
-          day_of_week: data.day_of_week,
         });
       });
   }, [newData]);
