@@ -36,12 +36,14 @@ export default function App() {
     fetch("http://worldtimeapi.org/api/ip")
       .then((res) => res.json())
       .then((data) => {
+        console.log(data);
         setData({
           time: data.datetime.slice(11, 16),
           abbreviation: data.abbreviation,
           day_of_week: data.day_of_week,
           day_of_year: data.day_of_year,
           timeZone: data.timezone,
+          week_number: data.week_number,
         });
       });
   }, [newData]);
@@ -53,7 +55,7 @@ export default function App() {
 
   return (
     <div>
-      <Time quoteData={quote} time={data.time} newQuote={setNewQuote} />
+      <Time quoteData={quote} data={data} newQuote={setNewQuote} />
     </div>
   );
 }
