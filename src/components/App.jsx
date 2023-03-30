@@ -22,21 +22,26 @@ export default function App() {
       });
   }, [newQuote]);
 
-  // // Get user location
-  // useEffect(() => {
-  //   fetch(
-  //     "https://api.ipbase.com/v2/info?apikey=sPAFvbdvxCIaolV2qbA796DvequeucnbIdALPtr1"
-  //   )
-  //     .then((res) => res.json())
-  //     .then((data) => console.log(data));
-  // }, []);
+  // Get user location
+  useEffect(() => {
+    fetch(
+      "https://api.ipbase.com/v2/info?apikey=sPAFvbdvxCIaolV2qbA796DvequeucnbIdALPtr1"
+    )
+      .then((res) => res.json())
+      .then((info) => {
+        console.log(info);
+        setLocation({
+          city: info.data.location.city.name,
+          state: info.data.location.region.name,
+        });
+      });
+  }, []);
 
   // Get time based on IP address
   useEffect(() => {
     fetch("http://worldtimeapi.org/api/ip")
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setData({
           time: data.datetime.slice(11, 16),
           abbreviation: data.abbreviation,
@@ -49,13 +54,19 @@ export default function App() {
   }, [newData]);
 
   // Reset data for new time
-  setInterval(() => {
-    setNewData((prev) => !prev);
-  }, 60000);
+  useEffect(() => {
+    const interval = setInterval(() => setNewData((prev) => !prev), 1000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div>
-      <Time quoteData={quote} data={data} newQuote={setNewQuote} />
+      <Time
+        quoteData={quote}
+        data={data}
+        newQuote={setNewQuote}
+        location={location}
+      />
     </div>
   );
 }

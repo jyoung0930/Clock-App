@@ -5,7 +5,7 @@ import upArrow from "../assets/desktop/icon-arrow-up.svg";
 import refreshIcon from "../assets/desktop/icon-refresh.svg";
 import Info from "./Info";
 
-export default function Time({ quoteData, newQuote, data }) {
+export default function Time({ quoteData, newQuote, data, location }) {
   return (
     <main className="time_section">
       <div className="time_padding">
@@ -26,8 +26,13 @@ export default function Time({ quoteData, newQuote, data }) {
               <img src={moonIcon} alt="weather icon" /> GOOD EVENING, IT'S
               CURRENTLY
             </p>
-            <p className="time">{data.time}</p>
-            <p className="country">IN LONDON, UK</p>
+            <p className="time">
+              {data.time}
+              <span className="abbreviation">{data.abbreviation}</span>
+            </p>
+            <p className="country">
+              {location.city}, {location.state}
+            </p>
           </div>
 
           <div className="button">

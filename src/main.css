@@ -14,6 +14,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  justify-content: flex-start;
   margin: 0 auto;
   background-image: url("./assets/desktop/bg-image-nighttime.jpg");
   background-repeat: no-repeat;
@@ -74,6 +75,11 @@
 .time {
   font-size: clamp(5rem, 20vw, 12.5rem);
   font-weight: 700;
+}
+
+.abbreviation {
+  font-size: clamp(1rem, 2vw, 2rem);
+  font-weight: 300;
 }
 
 .country {
