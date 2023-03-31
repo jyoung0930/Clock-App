@@ -1,7 +1,5 @@
 import { useState, useEffect } from "react";
-import dayjs from "dayjs";
 import Time from "./Time";
-import Info from "./Info";
 
 export default function App() {
   const [quote, setQuote] = useState({});
@@ -9,6 +7,7 @@ export default function App() {
   const [newData, setNewData] = useState(false);
   const [newQuote, setNewQuote] = useState(false);
   const [location, setLocation] = useState({});
+  const [open, setIsOpen] = useState(false);
 
   // Generate quote
   useEffect(() => {
@@ -66,6 +65,8 @@ export default function App() {
         data={data}
         newQuote={setNewQuote}
         location={location}
+        open={open}
+        setIsOpen={setIsOpen}
       />
     </div>
   );

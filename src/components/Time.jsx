@@ -5,21 +5,30 @@ import upArrow from "../assets/desktop/icon-arrow-up.svg";
 import refreshIcon from "../assets/desktop/icon-refresh.svg";
 import Info from "./Info";
 
-export default function Time({ quoteData, newQuote, data, location }) {
+export default function Time({
+  quoteData,
+  newQuote,
+  data,
+  location,
+  open,
+  setIsOpen,
+}) {
   return (
     <main className="time_section">
       <div className="time_padding">
-        <section className="quote">
-          <p className="quote_heading">
-            "{quoteData.content}"
-            <img
-              onClick={() => newQuote((prev) => !prev)}
-              src={refreshIcon}
-              alt="icon"
-            />
-          </p>
-          <p className="quote_author">{quoteData.author}</p>
-        </section>
+        {!open && (
+          <section className="quote">
+            <p className="quote_heading">
+              "{quoteData.content}"
+              <img
+                onClick={() => newQuote((prev) => !prev)}
+                src={refreshIcon}
+                alt="icon"
+              />
+            </p>
+            <p className="quote_author">{quoteData.author}</p>
+          </section>
+        )}
         <section className="time_button_section">
           <div className="time_info">
             <p className="time_greeting">
@@ -35,7 +44,7 @@ export default function Time({ quoteData, newQuote, data, location }) {
             </p>
           </div>
 
-          <div className="button">
+          <div onClick={() => setIsOpen((prev) => !prev)} className="button">
             <p>MORE</p>
             <div className="arrow_container">
               <img src={downArrow} alt="arrow" />
@@ -44,7 +53,7 @@ export default function Time({ quoteData, newQuote, data, location }) {
         </section>
       </div>
       {/* conditionally render info box */}
-      <Info timeInfo={data} />
+      {open && <Info timeInfo={data} />}
     </main>
   );
 }

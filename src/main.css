@@ -59,6 +59,7 @@
   justify-content: space-between;
   align-items: flex-end;
   flex-wrap: wrap;
+  height: 50vh;
 }
 
 .time_greeting {
