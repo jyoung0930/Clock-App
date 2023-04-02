@@ -32,8 +32,8 @@ export default function Time({
         <section className="time_button_section">
           <div className="time_info">
             <p className="time_greeting">
-              <img src={moonIcon} alt="weather icon" /> GOOD EVENING, IT'S
-              CURRENTLY
+              <img src={moonIcon} alt="weather icon" /> GOOD EVENING
+              <span className="mobile_cut">, IT'S CURRENTLY</span>
             </p>
             <p className="time">
               {data.time}
@@ -47,7 +47,7 @@ export default function Time({
           <div onClick={() => setIsOpen((prev) => !prev)} className="button">
             <p>MORE</p>
             <div className="arrow_container">
-              <img src={downArrow} alt="arrow" />
+              <img src={open ? upArrow : downArrow} alt="arrow" />
             </div>
           </div>
         </section>

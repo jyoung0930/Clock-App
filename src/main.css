@@ -64,7 +64,7 @@
 
 .time_greeting {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   letter-spacing: 0.25rem;
   font-size: clamp(0.5rem, 3vw, 1.2rem);
 }
@@ -76,6 +76,7 @@
 .time {
   font-size: clamp(5rem, 20vw, 12.5rem);
   font-weight: 700;
+  margin: 25px 0;
 }
 
 .abbreviation {
@@ -94,8 +95,8 @@
   justify-content: space-between;
   align-items: center;
   font-size: 1rem;
-  width: 146px;
-  height: 56px;
+  width: 9.125rem;
+  height: 3.5rem;
   background-color: #ffffff;
   border-radius: 1.7em;
   cursor: pointer;
@@ -123,13 +124,20 @@
 .info {
   height: 50vh;
   width: 100%;
-  padding: 3rem;
+  padding: 2rem;
   display: grid;
   background-color: gray;
-
   grid-template-areas:
     "cz dow"
     "doy wn";
+}
+
+.info p {
+  font-size: 1rem;
+}
+
+.info h2 {
+  font-size: clamp(1.25rem, 2vw, 3.5rem);
 }
 
 .cz {
@@ -143,4 +151,42 @@
 }
 .wn {
   grid-area: wn;
+}
+
+.cz,
+.doy,
+.dow,
+.wn {
+  border: 2px solid red;
+}
+
+@media (max-width: 600px) {
+  .info {
+    grid-template-areas:
+      "cz"
+      "dow"
+      "doy"
+      "wn";
+  }
+
+  .info_details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .button {
+    width: 7.1875rem;
+    height: 2.4375rem;
+    padding: 0.8em;
+  }
+
+  .arrow_container {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .mobile_cut {
+    display: none;
+  }
 }
