@@ -5,12 +5,12 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Inter", sans-serif;
-  color: #ffffff;
 }
 
 /* Time Section */
 
 .time_section {
+  color: #ffffff;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -126,7 +126,7 @@
   width: 100%;
   padding: 2rem;
   display: grid;
-  background-color: gray;
+  backdrop-filter: blur(20.3871px);
   grid-template-areas:
     "cz dow"
     "doy wn";

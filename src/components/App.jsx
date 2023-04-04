@@ -8,6 +8,7 @@ export default function App() {
   const [newQuote, setNewQuote] = useState(false);
   const [location, setLocation] = useState({});
   const [open, setIsOpen] = useState(false);
+  const [evening, setIsEvening] = useState(true);
 
   // Generate quote
   useEffect(() => {
@@ -43,6 +44,7 @@ export default function App() {
       .then((data) => {
         setData({
           time: data.datetime.slice(11, 16),
+          hour: parseInt(data.datetime.slice(11, 14)),
           abbreviation: data.abbreviation,
           day_of_week: data.day_of_week,
           day_of_year: data.day_of_year,
@@ -67,6 +69,9 @@ export default function App() {
         location={location}
         open={open}
         setIsOpen={setIsOpen}
+        hour={data.hour}
+        evening={evening}
+        setIsEvening={setIsEvening}
       />
     </div>
   );

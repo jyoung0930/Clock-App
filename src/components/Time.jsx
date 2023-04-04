@@ -12,7 +12,17 @@ export default function Time({
   location,
   open,
   setIsOpen,
+  hour,
+  evening,
+  setIsEvening,
 }) {
+  const infoSectionStyles = {
+    backgroundColor: evening
+      ? "rgba(0, 0, 0, 0.75)"
+      : "rgba(255, 255, 255, 0.75)",
+    color: evening ? "#FFFFFF" : "#303030",
+  };
+
   return (
     <main className="time_section">
       <div className="time_padding">
@@ -32,7 +42,8 @@ export default function Time({
         <section className="time_button_section">
           <div className="time_info">
             <p className="time_greeting">
-              <img src={moonIcon} alt="weather icon" /> GOOD EVENING
+              <img src={moonIcon} alt="weather icon" />{" "}
+              {hour >= 12 ? "GOOD EVENING" : "GOOD MORNING"}
               <span className="mobile_cut">, IT'S CURRENTLY</span>
             </p>
             <p className="time">
@@ -52,8 +63,8 @@ export default function Time({
           </div>
         </section>
       </div>
-      {/* conditionally render info box */}
-      {open && <Info timeInfo={data} />}
+
+      {open && <Info style={infoSectionStyles} timeInfo={data} />}
     </main>
   );
 }

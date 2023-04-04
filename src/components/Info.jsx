@@ -1,6 +1,6 @@
-export default function Info({ timeInfo }) {
+export default function Info({ timeInfo, style }) {
   return (
-    <section className="info">
+    <section style={style} className="info">
       <div className="info_details cz">
         <p>CURRENT ZONE</p>
         <h2>{timeInfo.timeZone}</h2>
