@@ -29,7 +29,6 @@ export default function App() {
     )
       .then((res) => res.json())
       .then((info) => {
-        console.log(info);
         setLocation({
           city: info.data.location.city.name,
           state: info.data.location.region.name,
@@ -60,6 +59,11 @@ export default function App() {
     return () => clearInterval(interval);
   }, []);
 
+  // Check if its eveining time
+  useEffect(() => {
+    data.hour < 12 ? setIsEvening(false) : setIsEvening(true);
+  }, [data]);
+
   return (
     <div>
       <Time
@@ -71,7 +75,6 @@ export default function App() {
         setIsOpen={setIsOpen}
         hour={data.hour}
         evening={evening}
-        setIsEvening={setIsEvening}
       />
     </div>
   );

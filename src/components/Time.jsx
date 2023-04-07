@@ -12,9 +12,7 @@ export default function Time({
   location,
   open,
   setIsOpen,
-  hour,
   evening,
-  setIsEvening,
 }) {
   const infoSectionStyles = {
     backgroundColor: evening
@@ -42,8 +40,8 @@ export default function Time({
         <section className="time_button_section">
           <div className="time_info">
             <p className="time_greeting">
-              <img src={moonIcon} alt="weather icon" />{" "}
-              {hour >= 12 ? "GOOD EVENING" : "GOOD MORNING"}
+              <img src={evening ? moonIcon : sunIcon} alt="weather icon" />{" "}
+              {evening ? "GOOD EVENING" : "GOOD MORNING"}
               <span className="mobile_cut">, IT'S CURRENTLY</span>
             </p>
             <p className="time">

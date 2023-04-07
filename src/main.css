@@ -22,7 +22,6 @@
   background-position: center;
   max-width: 90rem;
   height: 100vh;
-  border: 0.2rem solid red;
 }
 
 .time_padding {
@@ -126,7 +125,7 @@
   width: 100%;
   padding: 2rem;
   display: grid;
-  backdrop-filter: blur(20.3871px);
+
   grid-template-areas:
     "cz dow"
     "doy wn";
@@ -151,13 +150,6 @@
 }
 .wn {
   grid-area: wn;
-}
-
-.cz,
-.doy,
-.dow,
-.wn {
-  border: 2px solid red;
 }
 
 @media (max-width: 600px) {
