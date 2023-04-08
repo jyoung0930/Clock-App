@@ -38,7 +38,7 @@ export default function App() {
 
   // Get time based on IP address
   useEffect(() => {
-    fetch("http://worldtimeapi.org/api/ip")
+    fetch("https://worldtimeapi.org/api/ip")
       .then((res) => res.json())
       .then((data) => {
         setData({
