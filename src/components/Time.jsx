@@ -3,6 +3,8 @@ import sunIcon from "../assets/desktop/icon-sun.svg";
 import downArrow from "../assets/desktop/icon-arrow-down.svg";
 import upArrow from "../assets/desktop/icon-arrow-up.svg";
 import refreshIcon from "../assets/desktop/icon-refresh.svg";
+import nightImage from "../assets/desktop/bg-image-nighttime.jpg";
+import dayImage from "../assets/desktop/bg-image-daytime.jpg";
 import Info from "./Info";
 
 export default function Time({
@@ -21,8 +23,12 @@ export default function Time({
     color: evening ? "#FFFFFF" : "#303030",
   };
 
+  const timeSectionStyles = {
+    backgroundImage: evening ? `url(${nightImage})` : `url(${dayImage})`,
+  };
+
   return (
-    <main className="time_section">
+    <main style={timeSectionStyles} className="time_section">
       <div className="time_padding">
         {!open && (
           <section className="quote">
@@ -54,7 +60,7 @@ export default function Time({
           </div>
 
           <div onClick={() => setIsOpen((prev) => !prev)} className="button">
-            <p>MORE</p>
+            <p>{open ? "LESS" : "MORE"}</p>
             <div className="arrow_container">
               <img src={open ? upArrow : downArrow} alt="arrow" />
             </div>
